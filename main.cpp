@@ -7,10 +7,10 @@
  * 3. TEMESGEN ABEBE [IHRCS-328669-16]
  * 4. MIHRETAB NIGATU [IHRCS-9599-16]
  * 5. ERMIAS GIRMA [IHRCS-829949-16]
- * 6. Wondwosen Dukamo [907359/16]
+ * 6. Wondwosen Dukamo [IHRCS-907359-16]
  *
  * Simple Doubly Circular Linked List for Employee Attendance Management
- * Features: Check-in, Check-out, Search, Sort, Update, Delete, Sample Data
+ * Features: Check-in, Check-out, Search, Sort, Update, Delete
  */
 
 #include <iostream>
@@ -315,73 +315,7 @@ public:
         cout << "Employees sorted by ID!" << endl;
     }
 
-    // Load sample data - Simple and easy to understand
-    void loadSampleData()
-    {
-        cout << "Loading sample data..." << endl;
 
-        // Add sample employees with simple IDs starting from 1
-        addEmployee(1, "Eden Yehualashet");
-        addEmployee(2, "Abel Shiferaw");
-        addEmployee(3, "Temesgen Abebe");
-        addEmployee(4, "Mihretab Nigatu");
-        addEmployee(5, "Ermias Girma");
-        addEmployee(6, "Wondwosen Dukamo");
-
-        // Check-in some employees (simple pattern: 1, 3, 6)
-        checkIn(1); // Eden
-        checkIn(3); // Temesgen
-        checkIn(6); // Wondwosen
-
-        cout << "Sample data loaded successfully!" << endl;
-        cout << "3 employees are checked in, 3 are absent." << endl;
-    }
-
-    // Test all functions - Simple and easy to understand
-    void runTestDemo()
-    {
-        cout << "\n=== RUNNING SIMPLE TEST DEMO ===" << endl;
-
-        // First load sample data for testing
-        cout << "\nLoading sample data for demo..." << endl;
-        loadSampleData();
-
-        // Test 1: Display current state
-        cout << "\n1. Current Employee Status:" << endl;
-        displayAll();
-
-        // Test 2: Search function (simple ID)
-        cout << "\n2. Testing Search Function:" << endl;
-        cout << "Searching for Employee ID 2 (Abel)..." << endl;
-        Employee *emp = searchEmployee(2);
-        if (emp)
-        {
-            cout << "Found: " << emp->name << " - Status: " << (emp->isPresent ? "Present" : "Absent") << endl;
-        }
-
-        // Test 3: Check-out employee ID 1
-        cout << "\n3. Testing Check-out:" << endl;
-        checkOut(1); // Eden checks out
-
-        // Test 4: Check-in employee ID 2
-        cout << "\n4. Testing Check-in:" << endl;
-        checkIn(2); // Abel checks in
-
-        // Test 5: Update employee name
-        cout << "\n5. Testing Update Function:" << endl;
-        updateEmployee(4, "Mihretab N. Nigatu");
-
-        // Test 6: Sort employees
-        cout << "\n6. Testing Sort Function:" << endl;
-        sortByID();
-
-        // Test 7: Display final state
-        cout << "\n7. Final Employee Status After Tests:" << endl;
-        displayAll();
-
-        cout << "\n=== TEST DEMO COMPLETED ===" << endl;
-        cout << "All functions tested successfully!" << endl;
-    }
 
     // Get total count
     int getTotalEmployees()
@@ -414,7 +348,6 @@ int main()
 
     cout << "=== Welcome to Employee Attendance System ===" << endl;
     cout << "Group 2 - Doubly Circular Linked List Implementation" << endl;
-    cout << "Note: Use option 9 to run test demo with sample data" << endl;
 
     while (true)
     {
@@ -427,8 +360,7 @@ int main()
         cout << "6. Update Employee Name" << endl;
         cout << "7. Delete Employee" << endl;
         cout << "8. Sort Employees by ID" << endl;
-        cout << "9. Run Test Demo" << endl;
-        cout << "10. Exit" << endl;
+        cout << "9. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -496,10 +428,6 @@ int main()
             break;
 
         case 9:
-            system.runTestDemo();
-            break;
-
-        case 10:
             cout << "Thank you for using Employee Attendance System!" << endl;
             return 0;
 

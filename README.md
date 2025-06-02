@@ -20,7 +20,6 @@ This project implements a **simple and beginner-friendly** doubly-circular linke
 - **Update**: Modify employee information
 - **Delete**: Remove employee from system
 - **Sort**: Arrange employees by ID using bubble sort
-- **Test Demo**: Automated demonstration with sample data (option 9)
 
 ## Data Structure
 - **Doubly Circular Linked List**: Each node contains employee information and pointers to both next and previous nodes
@@ -44,8 +43,7 @@ Or simply double-click `compile_and_run.bat` for automatic compilation and execu
 6. Update Employee Name
 7. Delete Employee
 8. Sort Employees by ID
-9. Run Test Demo
-10. Exit
+9. Exit
 
 ## Implementation Details
 - **Simple IDs**: Employee IDs start from 1, 2, 3, 4, 5, 6 (easy to remember)

@@ -62,5 +62,13 @@
     "system_error": "cpp",
     "typeinfo": "cpp",
     "iostream": "cpp"
-  }
+  },
+  "code-runner.executorMap": {
+    "cpp": "cd $dir; g++ $fileName -o $fileNameWithoutExt.exe; if ($LASTEXITCODE -eq 0) { Write-Host 'Running program...' -ForegroundColor Green; .\\$fileNameWithoutExt.exe } else { Write-Host 'Compilation failed!' -ForegroundColor Red }"
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.preserveFocus": false,
+  "code-runner.defaultLanguage": "cpp"
 }
