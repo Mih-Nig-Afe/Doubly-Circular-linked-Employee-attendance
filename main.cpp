@@ -4,9 +4,9 @@
  * Group Members:
  * 1. Eden Yehualashet [IHRCS-352438-16]
  * 2. Abel Shiferaw [IHRCS-9781-16]
- * 3. TEMESGEN ABEBE [IHRCS-328669-16]
- * 4. MIHRETAB NIGATU [IHRCS-9599-16]
- * 5. ERMIAS GIRMA [IHRCS-829949-16]
+ * 3. Temesgen Abebe [IHRCS-328669-16]
+ * 4. Mihretab Nigatu [IHRCS-9599-16]
+ * 5. Ermias Girma [IHRCS-829949-16]
  * 6. Wondwosen Dukamo [IHRCS-907359-16]
  *
  * Simple Doubly Circular Linked List for Employee Attendance Management

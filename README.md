@@ -3,10 +3,10 @@
 ## Group Members
 1. Eden Yehualashet [IHRCS-352438-16]
 2. Abel Shiferaw [IHRCS-9781-16]
-3. TEMESGEN ABEBE [IHRCS-328669-16]
-4. MIHRETAB NIGATU [IHRCS-9599-16]
-5. ERMIAS GIRMA [IHRCS-829949-16]
-6. Wondwosen Dukamo [907359/16]
+3. Temesgen Abebe [IHRCS-328669-16]
+4. Mihretab Nigatu [IHRCS-9599-16]
+5. Ermias Girma [IHRCS-829949-16]
+6. Wondwosen Dukamo [IHRCS-907359-16]
 
 ## Project Description
 This project implements a **simple and beginner-friendly** doubly-circular linked list to handle employee attendance management for an organization. The system uses **simple IDs starting from 1** and supports check-in and check-out operations along with basic CRUD operations. The code is designed to be **easy to understand** for students learning data structures.
@@ -28,11 +28,9 @@ This project implements a **simple and beginner-friendly** doubly-circular linke
 
 ## How to Compile and Run
 ```bash
-g++ doubly_circular_attendance.cpp -o final_attendance
-./final_attendance
+g++ main.cpp -o main.exe
+./main.exe
 ```
-
-Or simply double-click `compile_and_run.bat` for automatic compilation and execution.
 
 ## Menu Options
 1. Add Employee
