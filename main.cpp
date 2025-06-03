@@ -37,8 +37,8 @@ struct Employee
         checkInTime = "";
         checkOutTime = "";
         isPresent = false;
-        next = nullptr;
-        prev = nullptr;
+        next = NULL;
+        prev = NULL;
     }
 };
 
@@ -53,7 +53,7 @@ public:
     // Constructor
     AttendanceSystem()
     {
-        head = nullptr;
+        head = NULL;
         totalEmployees = 0;
     }
 
@@ -63,7 +63,7 @@ public:
         time_t now = time(0);
         char *timeStr = ctime(&now);
         string result(timeStr);
-        result.pop_back(); // Remove newline
+        result = result.substr(0, result.length() - 1); // Remove newline
         return result;
     }
 
@@ -74,7 +74,7 @@ public:
         Employee *newEmp = new Employee(id, name);
 
         // Step 2: Check if this is the first employee
-        if (head == nullptr)
+        if (head == NULL)
         {
             // First employee - point to itself (circular)
             head = newEmp;
@@ -102,7 +102,7 @@ public:
     void checkIn(int id)
     {
         Employee *emp = searchEmployee(id);
-        if (emp == nullptr)
+        if (emp == NULL)
         {
             cout << "Employee with ID " << id << " not found!" << endl;
             return;
@@ -124,7 +124,7 @@ public:
     void checkOut(int id)
     {
         Employee *emp = searchEmployee(id);
-        if (emp == nullptr)
+        if (emp == NULL)
         {
             cout << "Employee with ID " << id << " not found!" << endl;
             return;
@@ -144,8 +144,8 @@ public:
     // Search employee by ID
     Employee *searchEmployee(int id)
     {
-        if (head == nullptr)
-            return nullptr;
+        if (head == NULL)
+            return NULL;
 
         Employee *current = head;
         do
@@ -157,13 +157,13 @@ public:
             current = current->next;
         } while (current != head);
 
-        return nullptr;
+        return NULL;
     }
 
     // Display all employees with proper table formatting
     void displayAll()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "No employees in the system!" << endl;
             return;
@@ -221,7 +221,7 @@ public:
     void updateEmployee(int id, string newName)
     {
         Employee *emp = searchEmployee(id);
-        if (emp == nullptr)
+        if (emp == NULL)
         {
             cout << "Employee with ID " << id << " not found!" << endl;
             return;
@@ -236,7 +236,7 @@ public:
     void deleteEmployee(int id)
     {
         Employee *emp = searchEmployee(id);
-        if (emp == nullptr)
+        if (emp == NULL)
         {
             cout << "Employee with ID " << id << " not found!" << endl;
             return;
@@ -244,7 +244,7 @@ public:
 
         if (totalEmployees == 1)
         {
-            head = nullptr;
+            head = NULL;
         }
         else
         {
@@ -266,7 +266,7 @@ public:
     void sortByID()
     {
         // Check if list is empty or has only one employee
-        if (head == nullptr || totalEmployees <= 1)
+        if (head == NULL || totalEmployees <= 1)
         {
             cout << "No sorting needed!" << endl;
             return;
@@ -326,7 +326,7 @@ public:
     // Destructor
     ~AttendanceSystem()
     {
-        if (head == nullptr)
+        if (head == NULL)
             return;
 
         Employee *current = head;
