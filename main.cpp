@@ -67,13 +67,20 @@ public:
         return result;
     }
 
-    // Add new employee - Simple step by step
+    // Add new employee - Simple step by step with ID uniqueness check
     void addEmployee(int id, string name)
     {
-        // Step 1: Create new employee
+        // Step 1: Check if employee with this ID already exists (Primary Key constraint)
+        if (searchEmployee(id) != NULL)
+        {
+            cout << "Error: Employee with ID " << id << " already exists! ID must be unique." << endl;
+            return;
+        }
+
+        // Step 2: Create new employee
         Employee *newEmp = new Employee(id, name);
 
-        // Step 2: Check if this is the first employee
+        // Step 3: Check if this is the first employee
         if (head == NULL)
         {
             // First employee - point to itself (circular)
@@ -83,19 +90,19 @@ public:
         }
         else
         {
-            // Step 3: Add to existing list
+            // Step 4: Add to existing list
             Employee *tail = head->prev; // Last employee
 
-            // Step 4: Connect new employee
+            // Step 5: Connect new employee
             newEmp->next = head; // New employee points to first
             newEmp->prev = tail; // New employee points to last
             tail->next = newEmp; // Last employee points to new
             head->prev = newEmp; // First employee points to new
         }
 
-        // Step 5: Increase count and show success
+        // Step 6: Increase count and show success
         totalEmployees++;
-        cout << "Employee " << name << " added successfully!" << endl;
+        cout << "Employee " << name << " (ID: " << id << ") added successfully!" << endl;
     }
 
     // Check-in employee
