@@ -10,7 +10,7 @@
  * 6. Wondwosen Dukamo [IHRCS-907359-16]
  *
  * Simple Doubly Circular Linked List for Employee Attendance Management
- * Features: Check-in, Check-out, Search, Sort, Update, Delete
+ * Features: Add Employee, Check-in, Check-out, Search, Sort, Update, Delete
  */
 
 #include <iostream>
