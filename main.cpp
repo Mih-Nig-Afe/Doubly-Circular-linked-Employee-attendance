@@ -322,28 +322,12 @@ public:
         cout << "Employees sorted by ID!" << endl;
     }
 
-
-
     // Get total count
     int getTotalEmployees()
     {
         return totalEmployees;
     }
 
-    // Destructor
-    ~AttendanceSystem()
-    {
-        if (head == NULL)
-            return;
-
-        Employee *current = head;
-        do
-        {
-            Employee *next = current->next;
-            delete current;
-            current = next;
-        } while (current != head);
-    }
 };
 
 // Main function with menu
