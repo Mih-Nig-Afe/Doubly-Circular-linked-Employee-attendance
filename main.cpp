@@ -66,7 +66,26 @@ public:
         result = result.substr(0, result.length() - 1); // Remove newline
         return result;
     }
+    
+    // Search employee by ID
+    Employee *searchEmployee(int id)
+    {
+        if (head == NULL)
+            return NULL;
 
+        Employee *current = head;
+        do
+        {
+            if (current->id == id)
+            {
+                return current;
+            }
+            current = current->next;
+        } while (current != head);
+
+        return NULL;
+    }
+    
     // Add new employee - Simple step by step with ID uniqueness check
     void addEmployee(int id, string name)
     {
@@ -137,7 +156,7 @@ public:
             return;
         }
 
-        if (!emp->isPresent)
+        if (emp->isPresent == false)
         {
             cout << "Employee " << emp->name << " is not checked in!" << endl;
             return;
@@ -148,24 +167,6 @@ public:
         cout << "Employee " << emp->name << " checked out at " << emp->checkOutTime << endl;
     }
 
-    // Search employee by ID
-    Employee *searchEmployee(int id)
-    {
-        if (head == NULL)
-            return NULL;
-
-        Employee *current = head;
-        do
-        {
-            if (current->id == id)
-            {
-                return current;
-            }
-            current = current->next;
-        } while (current != head);
-
-        return NULL;
-    }
 
     // Display all employees with proper table formatting
     void displayAll()
