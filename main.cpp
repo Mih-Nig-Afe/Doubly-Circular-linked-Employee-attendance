@@ -9,8 +9,8 @@
  * 5. Ermias Girma [IHRCS-829949-16]
  * 6. Wondwosen Dukamo [IHRCS-907359-16]
  *
- * Simple Doubly Circular Linked List for Employee Attendance Management
- * Features: Add Employee, Check-in, Check-out, Search, Sort, Update, Delete
+ * Doubly Circular Linked List for Employee Attendance Management
+ * Features: Check-in, Check-out, Search, Sort, Update, Delete
  */
 
 #include <iostream>
@@ -63,7 +63,7 @@ public:
         time_t now = time(0);
         char *timeStr = ctime(&now);
         string result(timeStr);
-        result = result.substr(0, result.length() - 1); // Remove newline
+        result = result.substr(0, result.length() - 1);
         return result;
     }
     
@@ -86,7 +86,7 @@ public:
         return NULL;
     }
     
-    // Add new employee - Simple step by step with ID uniqueness check
+    // Add new employee
     void addEmployee(int id, string name)
     {
         // Step 1: Check if employee with this ID already exists (Primary Key constraint)
@@ -99,27 +99,25 @@ public:
         // Step 2: Create new employee
         Employee *newEmp = new Employee(id, name);
 
-        // Step 3: Check if this is the first employee
+        // Step 2: Check if exicted
         if (head == NULL)
         {
-            // First employee - point to itself (circular)
             head = newEmp;
-            newEmp->next = newEmp; // Points to itself
-            newEmp->prev = newEmp; // Points to itself
+            newEmp->next = newEmp;
+            newEmp->prev = newEmp;
         }
         else
         {
-            // Step 4: Add to existing list
-            Employee *tail = head->prev; // Last employee
+            // Step 3: Add to existing list
+            Employee *tail = head->prev;
 
-            // Step 5: Connect new employee
-            newEmp->next = head; // New employee points to first
-            newEmp->prev = tail; // New employee points to last
-            tail->next = newEmp; // Last employee points to new
-            head->prev = newEmp; // First employee points to new
+            // Step 4: Connect new employee
+            newEmp->next = head;
+            newEmp->prev = tail;
+            tail->next = newEmp;
+            head->prev = newEmp;
         }
 
-        // Step 6: Increase count and show success
         totalEmployees++;
         cout << "Employee " << name << " (ID: " << id << ") added successfully!" << endl;
     }
@@ -168,7 +166,7 @@ public:
     }
 
 
-    // Display all employees with proper table formatting
+    // Display all employees
     void displayAll()
     {
         if (head == NULL)
@@ -270,7 +268,7 @@ public:
         totalEmployees--;
     }
 
-    // Simple bubble sort by ID - Easy to understand
+    // Bubble sort by ID - Easy to understand
     void sortByID()
     {
         // Check if list is empty or has only one employee
@@ -280,14 +278,13 @@ public:
             return;
         }
 
-        // Simple bubble sort - compare and swap
+        // Bubble sort - compare and swap
         bool swapped;
         do
         {
             swapped = false;
             Employee *current = head;
 
-            // Go through all employees
             for (int i = 0; i < totalEmployees - 1; i++)
             {
                 // If current ID is bigger than next ID, swap them
@@ -323,7 +320,6 @@ public:
         cout << "Employees sorted by ID!" << endl;
     }
 
-    // Get total count
     int getTotalEmployees()
     {
         return totalEmployees;
